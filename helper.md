@@ -1,4 +1,6 @@
 # Инструкция
+*git config --globa user.name
+*git config --global.email
 ## Клавиши
 > Q - выход с терминала, если он не отвечает
 > Ctrl+S Сохранение перед работой в терминале
