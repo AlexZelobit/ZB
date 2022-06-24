@@ -36,7 +36,7 @@
 * git branch -m 1_seminar second_seminar - переименование одной ветки в другую
 * git remote add origin https://github.com/AlexZelobit/zbv2.git - удаленно подключаемся к репозиторию
 * git branch -M main - переименовываем мастер в main
-* git pull - скачиваем файлы на свой пк
+* git pull - скачиваем файлы на свой пк и делает слияние
 * git push -u origin main - перекачиваем на удаленный репозиторий файлы
 * git clone https://github.com/ilnar-geekbrains/group_903/ - копируем удаленный репозиторий
 .gitignore - создание файла для игнорирования файлов и картинок
