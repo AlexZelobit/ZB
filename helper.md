@@ -91,3 +91,9 @@ H3 - ###
 * git fetch origin bar~1:bugFix; git merge bugFix
 
 Как видно, git pull используется, чтобы за одну команду выполнить fetch + merge.
+
+Seminar 7
+ReadLine - оператор считывания данных из консоли
+int - целочисленный тип данных
+if {} else {} - оператов ветвения
+
