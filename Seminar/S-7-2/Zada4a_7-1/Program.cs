@@ -11,4 +11,6 @@ if (secondDigit > max)
 {
               max = secondDigit;
 }
-Console.WriteLine(max);
+// Console.WriteLine("Число = " + randomNumber + ", максимальное из двух чисел это " + max);
+// вывод через интерпалляцию
+Console.WriteLine($"Число = {randomNumber}, максимальное из двух чисел это {max}");
