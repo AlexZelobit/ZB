@@ -1,13 +1,33 @@
-﻿// Если несколько условий то используются логические операторы
+﻿// Программа принимает 2 числа и выводит ответ является ли первое кратным второму. Если оно не кратно то выводит остаток от деления.
+// 31, 5 -> не кратно, остаток 4
+// 16, 4 -> кратно
 // Если условие ИЛИ то || если И то &&
-int number = 70;
-if (number > 9 && number < 100)
+// решение автоматическое
+int randomNumber1 = new Random().Next(16, 30);
+int randomNumber2 = new Random().Next(2, 4);
+Console.WriteLine($"Первое число {randomNumber1}");
+Console.WriteLine($"Второе число {randomNumber2}");
+if (randomNumber1 % randomNumber2 == 0)
 {
-              Console.WriteLine(number);
+             Console.WriteLine($"Кратно"); 
+}
+else
+{
+              Console.WriteLine($"Не кратно остаток {randomNumber1 % randomNumber2}");
 }
 
-// Программа выводит случайное трехзначное число и удаляет вторую цифру этого числа
-int randomNumber = new Random().Next(99, 1000);
-int firstDigit = randomNumber / 100; // узнаем первую цифру
-int thirdDigit = randomNumber % 10; // узнаем третью через остаток
-Console.WriteLine($"Число {randomNumber} первая и последняя цифра дают число {firstDigit}{thirdDigit}");
+// решенеие с водом чисел
+Console.WriteLine(" Write First number is ...");
+int a = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Write Second number is ...");
+int b = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine($"Первое число {a}");
+Console.WriteLine($"Второе число {b}");
+if (a % b == 0)
+{
+             Console.WriteLine($"Кратно"); 
+}
+else
+{
+              Console.WriteLine($"Не кратно остаток {a % b}");
+}
