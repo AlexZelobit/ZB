@@ -1,27 +1,17 @@
-﻿// Программа принимает число и проверяет кратно ли оно одновременно 7 и 23
-
+﻿// Программа принимает 2 числа и проверяет является ли одно квадратом лругого 
 // Если условие ИЛИ то || если И то &&
 // решение автоматическое
-int randomNumber1 = new Random().Next(7, 46);
-Console.WriteLine($"число {randomNumber1}");
-if (randomNumber1 % 7 == 0 && randomNumber1 % 23 == 0)
-{
-             Console.WriteLine($"Кратно"); 
-}
-else
-{
-              Console.WriteLine($"Не кратно");
-}
-
 // решенеие с водом чисел
 Console.WriteLine(" Write First number is ...");
 int a = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(" Write Second number is ...");
+int b = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine($"число {a}");
-if (a % 7 == 0 && a % 23 == 0)
+if (a * a == b || b * b == a)
 {
-             Console.WriteLine($"Кратно"); 
+             Console.WriteLine("Да, является"); 
 }
 else
 {
-              Console.WriteLine($"Не кратно");
+              Console.WriteLine("Нет, не является");
 }
