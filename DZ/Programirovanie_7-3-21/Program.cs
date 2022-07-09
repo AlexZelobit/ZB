@@ -1,47 +1,35 @@
-﻿// Программа принимает на вход координаты точки Х и У, которые не равны 0 и выдает номер четверти плоскости в которой они находятся
-//
-while(true) // повторяем пока программа не выполнится
+﻿// Программа принимает координаты двух точек и показывает расстояние между ними в 3D
+// применить теорему пифагора = гипотенуза = корень из суммы квадратов катетов
+/* А (3,6,8) и В(2,1,-7) Длинна будет = 15,84 */
+// Методы
+int InputIn (string output) // метод для ввода числа
 {
-              Console.Clear(); // очищаем значения после цикла
-              int x = InputIn(" Write X: ");
-              int y = InputIn(" Write Y: ");
-              int InputIn (string output) 
-                            {
-                                 Console.Write(output);
-                                 return Convert.ToInt32(Console.ReadLine());
-                            }
-              if (x == 0 || y == 0)
-                            {
-                                 Console.WriteLine("X and Y не доджны быть = 0");
-                                 return; // выходим из функции
-                            }
+     Console.Write(output);
+     return Convert.ToInt32(Console.ReadLine());
+}
+int Quadro (int number) // метод для получения квадрата числа
+{
+     int Quadro = number * number;
+     return Quadro;
+}
+// Решение
+int Ax = InputIn("Введите координату Х для первого числа: ");
+int Ay = InputIn("Введите координату Y для первого числа: ");
+int Az = InputIn("Введите координату Z для первого числа: ");
+int Bx = InputIn("Введите координату Х для второго числа: ");
+int By = InputIn("Введите координату Y для второго числа: ");
+int Bz = InputIn("Введите координату Z для второго числа: ");
 
-              else if (x > 0 && y > 0)
-                            {
-                                 Console.WriteLine("1 четверть");
-                            }
-              else if (x < 0 && y > 0)
-                            {
-                                 Console.WriteLine("2 четверть");
-                            }
-              else if (x < 0 && y < 0)
-                            {
-                                 Console.WriteLine("3 четверть");
-                            }
-              else if (x > 0 && y < 0)
-                            {
-                                 Console.WriteLine("4 четверть");
-                            }           
-              break; // прервать функцию
-}
-/*
-              int firstQuadro = Quadro(firstNumber);
-              int secondQuadro = Quadro(secondNumber);
-// это мы использовали функцию
-// давайте используем метод возведния в квадрат числа
-int Quadro(int firstNumber)
-{
-              int Quadro = firstNumber * firstNumber;
-              return Quadro;
-}
-Console.WriteLine($"Квадрат первого числа {firstNumber} второго {secondNumber}");*/
+int AxBx = Ax - Bx;
+int AyBy = Ay - By;
+int AzBz = Az - Bz;
+
+int QuadroAxBx = Quadro(AxBx);
+int QuadroAyBy = Quadro(AyBy);
+int QuadroAzBz = Quadro(AzBz);
+
+int SumQuadroAxBxAyByAzBz = QuadroAxBx + QuadroAyBy + QuadroAzBz;
+//Функция
+double sqrt = Math.Sqrt(SumQuadroAxBxAyByAzBz); // метод получения корня из числа
+// Ответ
+Console.WriteLine($"Расстояние между точками {sqrt}");

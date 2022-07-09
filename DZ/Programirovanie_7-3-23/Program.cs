@@ -1,15 +1,15 @@
-﻿// Программа принимает число X и выдает квадраты числа от 1 до X
-// 5 -> 1 4 9 16 25
+﻿// Программа принимает число X и выдает таблицу кубов числа от 1 до X
+// 5 -> 1 8 27 64 125
 // Методы
 int InputIn (string output) // метод для ввода числа
 {
      Console.Write(output);
      return Convert.ToInt32(Console.ReadLine());
 }
-int Quadro (int index) // метод для получения квадрата числа
+int Trio (int index) // метод для получения квадрата числа
 {
-     int Quadro = index * index;
-     return Quadro;
+     int Trio = index * index * index;
+     return Trio;
 }
 //Решение
      int number = InputIn("Введите число: ");
@@ -17,7 +17,7 @@ int Quadro (int index) // метод для получения квадрата 
 
      while(index <= number)
      {
-          int numberQuadro = Quadro(index);
-          Console.Write(numberQuadro + ", ");
+          int numberTrio = Trio(index);
+          Console.Write(numberTrio + ", ");
           index++;
      }
