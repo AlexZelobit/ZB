@@ -1,23 +1,21 @@
-﻿// Программа принимает число X и выдает квадраты числа от 1 до X
-// 5 -> 1 4 9 16 25
+﻿// Программа принимает число X и выдает сумму чисел от 1 до X
+// 7 -> 28
 // Методы
-int InputIn (string output) // метод для ввода числа
-{
-     Console.Write(output);
-     return Convert.ToInt32(Console.ReadLine());
-}
-int Quadro (int index) // метод для получения квадрата числа
-{
-     int Quadro = index * index;
-     return Quadro;
-}
-//Решение
-     int number = InputIn("Введите число: ");
-     int index = 1;
+Console.Write("Введите число:");
+int a = Convert.ToInt32(Console.ReadLine());
+int sum = 0; // наш будущий ответ
+int count = 1; // счет начинаем с 1
 
-     while(index <= number)
-     {
-          int numberQuadro = Quadro(index);
-          Console.Write(numberQuadro + ", ");
-          index++;
-     }
+/* while(count <= a) // пока наше значение меньше чем число
+{
+     sum += count; // sum = sum + count;
+     count ++;
+}
+
+     Console.Write(sum); */
+
+for (int i = 1; i <= a; i++) // цикл for создаст переменную i и сравнит ее с переменной a. Если условия будет выполняться то цикл сработает
+{
+     sum += i;
+}
+     Console.Write(sum);
