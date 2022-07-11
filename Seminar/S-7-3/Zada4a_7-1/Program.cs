@@ -35,13 +35,15 @@ while(true) // повторяем пока программа не выполн�
               break; // прервать функцию
 }
 /*
-              int firstQuadro = Quadro(firstNumber);
-              int secondQuadro = Quadro(secondNumber);
+int firstQuadro = Quadro(firstNumber);
+int secondQuadro = Quadro(secondNumber);
+
 // это мы использовали функцию
-// давайте используем метод возведния в квадрат числа
+// метод возведния в квадрат числа
+
 int Quadro(int firstNumber)
 {
-              int Quadro = firstNumber * firstNumber;
-              return Quadro;
+int Quadro = firstNumber * firstNumber;
+return Quadro;
 }
-Console.WriteLine($"Квадрат первого числа {firstNumber} второго {secondNumber}");*/
+*/
