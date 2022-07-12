@@ -1,25 +1,24 @@
-﻿// Программа меняет эллементы массива на противоположные
+﻿
+// Программа меняет элементы массива на противоположные
 
-int[] numbers = new int[12];
-int sumPositiv = 0;
-int sumNegativ = 0;
+int size = InputInt("Введите размер массива: ");
+int[] numbers = new int[size];
+int minus = -1;
 
 FillArray(numbers); // вызываем метод заполняющий массив
 PrintArray(numbers); // выводим на экран массив
 
      for(int i = 0; i < numbers.Length; i++) // проходимся по всему массиву
      {
-          if(numbers[i] > 0) // если положительный элемент, то мы складываем его в переменную +
-          {
-               sumPositiv += numbers[i];
-          }
-          else
-          {
-               sumNegativ += numbers[i];
-          }
+               numbers[i] *= minus;
      }
-Console.WriteLine($"Сумма положительных равна {sumPositiv}, сумма отрицательных равна {sumNegativ}");
+PrintArray(numbers); // выводим на экран массив
 
+int InputInt(string output)
+{
+     Console.Write(output);
+     return Convert.ToInt32(Console.ReadLine());
+}
 
 void FillArray(int[] array) // метод заполняющий наш массив
 {
