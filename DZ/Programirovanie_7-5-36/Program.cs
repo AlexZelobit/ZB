@@ -8,9 +8,9 @@ FillArray(numbers); // вызываем метод заполняющий мас
 PrintArray(numbers); // выводим на экран массив
 
 
-for (int i = 1; i < numbers.Length; i = i + nechet) // 
+for (int i = 1; i < numbers.Length; i = i + nechet) 
 {
-     result += + numbers[i] ; // если элемент четный то добавляем +1
+     result += numbers[i]; 
 }
 Console.Write($"Сумма нечетных элементов массива равна {result}");
 
