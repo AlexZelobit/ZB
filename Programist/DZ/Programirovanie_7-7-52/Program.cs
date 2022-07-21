@@ -28,11 +28,11 @@ for (int i = 0; i < m; i++)
 }
 
 Console.WriteLine();
-Console.WriteLine("Считаем сумму каждой колонки с новой строки:");
+Console.WriteLine("Считаем арифмет. сумму каждой колонки с новой строки:");
 foreach (double elem in summ)
 {
      
-     Console.WriteLine(elem/n); //вывод среднего для колонки
+     Console.WriteLine("{0,6:F2}", elem/n); //вывод среднего для колонки
 }
 
 
