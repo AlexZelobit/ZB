@@ -7,26 +7,34 @@ int[,] numbers = new int[m, n];
 Random rand = new Random();
 int[] summ = new int[n];
 
-for (int i = 0; i < m; i++)
+FillArray(numbers);
+PrintArray(numbers);
+
+void FillArray(int[,] array)
 {
-     for (int j = 0; j < n; j++)
+     for (int i = 0; i < array.GetLength(0); i++)
      {
-     numbers[i, j] = rand.Next(0, 10); //рандомные значения для елементов 
-     
+          for (int j = 0; j < array.GetLength(0); j++)
+          {
+          numbers[i, j] = rand.Next(0, 10); //рандомные значения для елементов 
+          
+          }
      }
 }
 
-for (int i = 0; i < m; i++)
+void PrintArray(int[,] array)
 {
-     for (int j = 0; j < n; j++)
+     for (int i = 0; i < array.GetLength(0); i++)
      {
-     
-     Console.Write(numbers[i, j] + " "); //вывод массива
-     summ[i] += numbers[j, i];      //подсчет суммы колонки
-     } 
-     Console.WriteLine();
+          for (int j = 0; j < array.GetLength(0); j++)
+          {
+          
+          Console.Write(numbers[i, j] + " "); //вывод массива
+          summ[i] += numbers[j, i];      //подсчет суммы колонки
+          } 
+          Console.WriteLine();
+     }
 }
-
 Console.WriteLine();
 Console.WriteLine("Считаем арифмет. сумму каждой колонки с новой строки:");
 foreach (double elem in summ)
