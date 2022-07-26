@@ -21,9 +21,9 @@ PrintMatrix(array);
 
 int[,] result = GetString(array); // передается массив
 {
-     int  count = 0,
+     int  count = 0, // количество каждого эллемента
           index = 0;
-     int[,] buff = new int[array.Length, 2];
+     int[,] buff = new int[array.Length, 2]; // создается массив размеров с количества эллементов
      buff = Fillarray2(buff);
      for (int i = 0; i < array.GetLength(0); i++)
      {
