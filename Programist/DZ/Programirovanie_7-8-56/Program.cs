@@ -6,75 +6,66 @@
 Наименьшая сумма элементов в 1 строке.
 */
 
-// задать двумерный массив из целых чисел. Программа удаляет строку и столбец на пересечении которых расположен наименьший эллемент массива.
-/*
-123
-456
-789
+int m = InputNumbers("Сколько строк?: ");
+int n = InputNumbers("Сколько столбцов?: ");
+int range = InputNumbers("Диапазон значений от 1 до ");
 
-56
-89
-*/
+int[,] myArray = new int[m, n];
+NewArray(myArray);
+PublishArray(myArray);
 
-// Двумерный мссив. Программа меняет строки на столбцы. Если это невозможно выводит сообщение
-
-// Задайте двумерный массив. Напишите прогу, которая меняет местами первую и последнюю строку массива
-
-int m = InputInt("Введите количество строк: ");
-int n = InputInt("Введите количество столюцов: ");
-int[,] array = new int[row, column]; // создаем матрицу
-int minRow = 0; // номер строки с наименьшей суммой элементов
-int sumRow = 0; // min сумма строки
-int sum = 0; // сумма строки
-PrintMatrix(numbers);
-Console.WriteLine();
-SortArray(numbers); // отсортированный массив
-PrintMatrix(numbers);
-Console.WriteLine("{minSum}");
-
-
-
-void SortArray(int[,] matrix) // сортировка матрицы 4 циклами (2 цигла одномерный массив + 2 для двумерного массива)
+int minSum = 0;
+int sumRow = SumElements(myArray, 0);
+for (int i = 1; i < myArray.GetLength(0); i++)
 {
-     for (int i = 0; i < matrix.GetLength(0); i++) // проходим по всей матрице
-     {
-          for (int j = 0; j < matrix.GetLength(1); j++) // проходим по всей матрице
-          {
-               matrix[i, j] =  
-                         int minSum = 0;
-                         minSum = minRow[i,1];
-          }
-     }
-     return minSum;
+  int temp = SumElements(myArray, i);
+  if (sumRow > temp)
+  {
+    sumRow = temp;
+    minSum = i;
+  }
 }
 
-void FillMatrix(int[,] matrix)
-{
-     for(int i = 0; i < matrix.GetLength(0); i++) // получаем размер первого измерения (строк)
-     {
-          for(int j = 0; j < matrix.GetLength(1); j++) // получаем размер второго измерения (столбец)
-          {
-               numbers[i, j] = new Random().Next(0,10); // вставляем рандомные числа
-          }
+Console.WriteLine($"\n{minSum+1} - строкa с наименьшей суммой ({sumRow}) элементов ");
 
-     }
+int InputNumbers(string input)
+{
+  Console.Write(input);
+  int output = Convert.ToInt32(Console.ReadLine());
+  return output;
 }
 
-void PrintMatrix(int[,] matrix)
+void NewArray(int[,] array)
 {
-     for(int i = 0; i < matrix.GetLength(0); i++) // печатаем каждый симбвол
-     {
-          for(int j = 0; j < matrix.GetLength(1); j++)
-          {
-               Console.Write(matrix[i, j] + " ");
-          }
-          Console.WriteLine(); // переходим на новую строку, чотб была таблица
-     }
+  for (int i = 0; i < array.GetLength(0); i++)
+  {
+    for (int j = 0; j < array.GetLength(1); j++)
+    {
+      array[i, j] = new Random().Next(range);
+    }
+  }
+}
+
+void PublishArray (int[,] array)
+{
+  for (int i = 0; i < array.GetLength(0); i++)
+  {
+    for (int j = 0; j < array.GetLength(1); j++)
+    {
+      Console.Write(array[i,j] + " ");
+    }
+    Console.WriteLine();
+  }
+}
+
+int SumElements(int[,] array, int i)
+{
+  int sumLine = array[i,0];
+  for (int j = 1; j < array.GetLength(1); j++)
+  {
+    sumLine += array[i,j];
+  }
+  return sumLine;
 }
 
 
-int InputInt(string output)
-{
-     Console.Write(output);
-     return Convert.ToInt32(Console.ReadLine());
-}
