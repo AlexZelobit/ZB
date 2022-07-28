@@ -7,7 +7,6 @@
 345
 */
 
-
 int m = InputInt("Введите количество строк: ");
 int n = InputInt("Введите количество столюцов: ");
 int[,] numbers = new int[m, n];
