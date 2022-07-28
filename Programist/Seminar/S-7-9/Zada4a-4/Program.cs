@@ -30,9 +30,9 @@ int a = int.Parse(Console.ReadLine()); // делаем конвертацию в
 Console.Write("Введите степень: ");
 int b = int.Parse(Console.ReadLine()); // делаем конвертацию в число
 
-Console.WriteLine($"{a} в степени {b} = {Step(a, b)}");
+Console.WriteLine($"Сумма чисел от {a} до {b} = {Step(a, b)}");
 
-int Step(int a, int step)
+int Step(int a, int step) // step мы вычисляем! В рекурсии всегда надо знать конец и выход!
 {
      if (step == 0)
      return 1;
