@@ -1,7 +1,7 @@
 ﻿// Массив вещественных чисел. Найти разницу между минимальным и максимальным значением массива
 
 int size = GetSizeArray("Введите длинну массива: ");
-double[] userArray = GetArray(size);
+double[] userArray = GetArray(size); // 1 устанавливаем размер двумерного массива
 
 PrintArray(userArray);
 double maxNumber = userArray[0],
@@ -20,7 +20,7 @@ for (int index = 0; index < userArray.Length; index++)
 }
 Console.WriteLine($"{maxNumber} - {minNumber} = {maxNumber - minNumber}");
 
-int GetSizeArray(string question)
+int GetSizeArray(string question) // вводимо число задает размер
 {
     Console.Write(question);
     return Convert.ToInt32(Console.ReadLine());
