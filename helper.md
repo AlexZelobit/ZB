@@ -126,11 +126,11 @@ git status
 
 git commit -m "Name Commit"
 git log
-git checkout
+git diff **вывод изменений по сравнению с последним коммитом**
+git checkout **переход между коммитами**
 git checkout master
 
 q - выход
-git diff - показывает изменения
 git branch dz-povtor
 git branch
 git checkout -d - удаление ветки
