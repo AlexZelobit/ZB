@@ -124,7 +124,7 @@ git --version
 git init
 git status
 
-git commit -m
+git commit -m "Name Commit"
 git log
 git checkout
 git checkout master
