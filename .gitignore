@@ -13,10 +13,9 @@
 x64/
 [Bb]in/
 [Oo]bj/
-/Zelobit
-/Zelobit
-/Programist
-/Network
+# /Zelobit
+# /Programist
+# /Network
 # MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
