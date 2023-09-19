@@ -11,3 +11,12 @@ zabbix_internet_lab_ru_bot
 <!-- Для получения group id в Telegram добавляю бота @myidbot в группу и отправляю команду: -->
 
 /getgroupid@myidbot
+
+**Настраиваем разрешение на отправку сообщений в группу**
+Для этого:
+Перейдите в BotFather.
+Напишите команду /mybots.
+Выберите нужного бота
+Перейдите в Bot Settings → Group Privacy.
+Выберите Turn off.
+Должна появиться фраза Privacy mode is disabled for Bot.

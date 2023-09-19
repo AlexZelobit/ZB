@@ -10,9 +10,16 @@ sudo iptables -P INPUT ACCEPT
 
 # Обновляем сертификат
 
+<!-- Проверяем возможность продления, чтобы нас не забанили -->
+
+certbot renew --dry-run
+
+<!-- Если все хорошо то продлеваем -->
+
 certbot renew
 
 <!--
+myhost=m.snabavangard.ru
 apt install certbot
 certbot certonly --standalone -d $myhost -->
 
@@ -132,12 +139,16 @@ sudo su - zimbra -c "zmcontrol restart"
 
 #################################################################################################################
 
-Проверка размера почтовых ящиков
+# Проверка размера почтовых ящиков
+
 su - zimbra
 all_accounts=`zmprov -l gaa`; for account in $all_accounts; do mbox_size=`zmmailbox -z -m $account gms`; echo "Mailbox size of $account = $mbox_size"; done ;
 
-Проверка работы служб
+# Проверка работы служб
+
 zmcontrol status
+
+# DKIM
 
 su - zimbra -c "/opt/zimbra/libexec/zmdkimkeyutil -a -d mail.sppcm.ru"
 40416232-B43C-11ED-AEE7-22528099B07E.\_domainkey IN TXT ( "v=DKIM1; k=rsa; "
@@ -146,6 +157,8 @@ su - zimbra -c "/opt/zimbra/libexec/zmdkimkeyutil -a -d mail.sppcm.ru"
 
 su - zimbra -c "/opt/zimbra/libexec/zmdkimkeyutil -q -d sppcm.ru"
 opendkim-testkey -d sppcm.ru -s 40416232-B43C-11ED-AEE7-22528099B07E -x /opt/zimbra/conf/opendkim.conf
+
+# DMARC
 
 \_dmarc TXT v=DMARC1;p=quarantine;sp=quarantine;pct=100;aspf=r;fo=1;rua=mailto:ka@zelobit.com;ruf=mailto:ka@zelobit.com
 
@@ -156,35 +169,12 @@ fo=, fail policy, опциональный с значением по умолч
 rua=, опциональный, список почтовых адресов через запятую, на которые высылать агрегированные отчеты. Если адрес находится в том же домене, работает без дополнительных настроек.
 ruf=, опциональный, список почтовых адресов через запятую, на которые высылать fail-отчеты (о невалидной почте). Если адрес находится в том же домене, работает без дополнительных настроек.
 
-@ TXT v=spf1 a mx ip4:95.214.119.12 include:\_spf.mail.sppcm.ru ~all
-
-40416232-B43C-11ED-AEE7-22528099B07E.\_domainkey
-
-проверяем соответствие сертификата
-opendkim-testkey -d sppcm.ru -s 40416232-B43C-11ED-AEE7-22528099B07E -x /opt/zimbra/conf/opendkim.conf
-
-# Установка DKIM
-
-su - zimbra -c "/opt/zimbra/libexec/zmdkimkeyutil -a -d mail.sppcm.ru"
-40416232-B43C-11ED-AEE7-22528099B07E.\_domainkey IN TXT ( "v=DKIM1; k=rsa; "
-"p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7/C4ZkBKIGvQh8EKFvoBXBE2GmVs4yali5U6CPLCq2jr3eTqcTD/ld8X4W+2eIxTVJkyvSiZIzFc/oItTiJO6zyiPtwWjj4d/hnrFQOUwuLfzLvn/5tDoxKhSWTu4A0uEsyTMxOrgDsPq6CjmOFym6NE4ZjdJFgazEq2lOFadk0UxLCP0xQ5HhPAtQ4vsxFG5XVivf9fsVNjLm"
-"5XU80OS4Ms4NPvCeL8vvvo0+ud6dE9vsl5I4akHZi2orWqjS6vZIM4ugCvKcZc4gKsm+b+xYTMw3Jk0rZhzO2u4a0EY6xsLf9AJR8Yz698g7snJqeg0apRShcf/nd+Um9WtCXGfwIDAQAB" ) ; ----- DKIM key 40416232-B43C-11ED-AEE7-22528099B07E for sppcm.ru
-
-su - zimbra -c "/opt/zimbra/libexec/zmdkimkeyutil -q -d sppcm.ru"
-opendkim-testkey -d sppcm.ru -s 40416232-B43C-11ED-AEE7-22528099B07E -x /opt/zimbra/conf/opendkim.conf
-
-\_dmarc TXT v=DMARC1; p=quarantine; sp=quarantine; pct=100;aspf=r; fo=0; rua=mailto:ka@sppcm.ru; ruf=mailto:ka@sppcm.ru
-
-не прошедшие проверку DKIM или SPF помещаем в СПАМ
-pct=, опциональный параметр, доля обрабатываемых DMARC писем. По умолчанию 100 (100 %), и может быть снижена для отладочных целей.
-aspf=, опциональный параметр, со значениями s (strict) и r (relaxed, по умолчанию) для SPF, требующий совпадения ответа команды MAIL FROM и заголовка From письма. r разрешает субдомены.
-fo=, fail policy, опциональный с значением по умолчанию fo=0. В значении 0, отсылает обратный отчёт если все проверки невалидны (DKIM, SPF); в значении 1 — если какая-либо из проверок не валидна. Также возможны значения s и d, соответственно для отчетов по DKIM и SPF.
-rua=, опциональный, список почтовых адресов через запятую, на которые высылать агрегированные отчеты. Если адрес находится в том же домене, работает без дополнительных настроек.
-ruf=, опциональный, список почтовых адресов через запятую, на которые высылать fail-отчеты (о невалидной почте). Если адрес находится в том же домене, работает без дополнительных настроек.
+# SPF
 
 @ TXT v=spf1 a mx ip4:95.214.119.12 include:\_spf.mail.sppcm.ru ~all
 
 40416232-B43C-11ED-AEE7-22528099B07E.\_domainkey
 
-проверяем соответствие сертификата
+# проверяем соответствие сертификата
+
 opendkim-testkey -d sppcm.ru -s 40416232-B43C-11ED-AEE7-22528099B07E -x /opt/zimbra/conf/opendkim.conf

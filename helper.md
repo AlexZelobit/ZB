@@ -137,3 +137,5 @@ git checkout -d - удаление ветки
 
 git merge dz-povtor - слияние ветки
 git branch -d bad_branch - удаление не нужной ветки
+
+git rm -r --cached **Удалить папку, которая зависла на Github**

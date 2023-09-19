@@ -232,4 +232,6 @@ service ssh start
 ssh petya@8.8.8.8
 uname -a
 
-<!-- Планировщик -->
+<!-- Внешний IP -->
+
+wget -qO- eth0.me
