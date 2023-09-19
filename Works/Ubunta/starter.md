@@ -14,6 +14,7 @@ apt install open-vm-tools
 sudo hostname server-mail
 sudo nano /etc/hostname
 sudo nano /etc/hosts
+sudo nano /etc/netplan/tab-tab **копируем и изменяем шаблон ниже**
 
 ## Ubuntu 22.04
 
