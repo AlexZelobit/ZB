@@ -10,7 +10,7 @@ sudo mount /dev/sda1 ~/zbbackup
 sudo fdisk -l
 lsblk
 
-<!-- Пишем команду к новому диску -->
+<!-- Пишем команду создания тома к новому диску -->
 
 sudo cfdisk /dev/sdb
 
@@ -36,6 +36,4 @@ nano /etc/fstab
 
 <!-- Монтируем папку -->
 
-sudo mount /dev/sdb1 /home/ka/hdd2
-
-
+sudo mount /dev/sdb1 /mnt/disk1

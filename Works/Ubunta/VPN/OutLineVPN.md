@@ -8,7 +8,7 @@ sudo ufw allow 22/tcp
 sudo ufw allow from <ВашПостоянныйIP> to any port 22
 sudo ufw enable
 
-# Устанавливаем из репозитория
+# Устанавливаем из репозитория под root
 
 sudo wget -qO- https://raw.githubusercontent.com/Jigsaw-Code/outline-server/master/src/server_manager/install_scripts/install_server.sh | bash
 

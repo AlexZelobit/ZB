@@ -26,10 +26,10 @@ cat /usr/share/doc/netplan/examples/static.yaml
   ethernets:
     enp3s0:
       addresses:
-        - 10.10.10.2/24
+        - 95.214.119.26/24
       nameservers:
         search: [mydomain, otherdomain]
-        addresses: [10.10.10.1, 1.1.1.1]
+        addresses: [8.8.8.8, 1.1.1.1]
       routes:
         - to: default
           via: 10.10.10.1 -->
@@ -117,3 +117,5 @@ sudo usermod -aG sudo ka
 
 sudo apt install openssh-server
 sudo systemctl enable ssh
+
+[POOL4] WebArx-storage (sedyh-2-0)/WebArx-storage (sedyh-2-0)\_1.vmdk

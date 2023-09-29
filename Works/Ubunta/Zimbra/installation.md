@@ -148,7 +148,7 @@ su - zimbra -c "zmmtactl restart"
 <!-- Настройка редерикта с http на https -->
 
 su zimbra
-zmprov ms m.snabavangard.ru zimbraReverseProxyMailMode redirect
+zmprov ms mail.sppcm.ru zimbraReverseProxyMailMode redirect
 zmproxyctl restart
 netstat -lntp | grep 80
 
