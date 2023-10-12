@@ -11,3 +11,7 @@
 Переходим в AD, выделяем пользователей, Свойства - Профиль - Выбираем букву диска и пишем путь \\server\Share\%USERNAME%
 
 <!-- на практике такой способ не сработал, пришлось по одному вручную делать -->
+
+# Выгрузка всех пользователей
+
+Get-ADUser -Filter \* -Properties CN, SamAccountName, Created, LastLogonDate | Export-Csv -Encoding UTF8 -Path "C:usr\ad6.csv" -NoTypeInformation -Delimiter ","
