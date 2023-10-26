@@ -239,3 +239,19 @@ wget -qO- eth0.me
 <!-- Узнать размер папки -->
 
 du -sh
+
+<!-- Посмотреть все сетевые интерфейсы -->
+
+ip -br -c a
+
+# Установка vmware tools
+
+sudo apt install open-vm-tools
+
+# Проверка версии OS
+
+hostnamectl
+
+# Утилита статистики
+
+sudo apt-get glances

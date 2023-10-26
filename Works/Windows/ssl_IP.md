@@ -14,4 +14,4 @@ net stop certsvc && net start certsvc
 
 <!-- Для добавления IP и альтернативного доменного имени при генерации сертификата указываем дополнительные атрибуты. -->
 
-san:dns=m.snabavangard.ru&dns=mail.snabavangard.local&ipaddress=10.200.202.147
+san:dns=spbslsv-vdi-hv1-ipmi&ipaddress=10.15.22.41

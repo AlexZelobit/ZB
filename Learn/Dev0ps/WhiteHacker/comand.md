@@ -1,3 +1,30 @@
+# работа с zip
+
+sudo apt-get install unzip
+unzip file.zip -d destination_folder
+unzip file.zip
+
+# для запаковки
+
+zip -r /path/to/files/\*
+
+# Работа с CRON
+
+Посмотреть список задач в Cron: cat /etc/crontab
+
+# Работа с правами
+
+chown -R zabbix. /usr/lib/zabbix/alertscripts
+
+# Работа с ключами SSH
+
+~/.ssh/known_hosts
+
+# Сканируем домен на открытие портов TCP и UDP портов
+
+nmap -sS nmap.org
+nmap -sU nmap.org
+
 # Сканирование открытых портов
 
 nmap -Pn -n -F -sT --open 192.168.10.0/24
@@ -25,3 +52,11 @@ ssh john@10.8.0.14
 scp winPEASx64.exe john@10.8.0.14:C:\\Users\\John\\
 john@WIN10> winPEASx64.exe
 **политику количества попыток ввода пароля**
+
+# Список активных интерфейсов
+
+ip -br -c a
+
+# Проверить маршрут трафика
+
+ip r get 8.8.8.8

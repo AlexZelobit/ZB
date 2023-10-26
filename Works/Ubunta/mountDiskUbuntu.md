@@ -36,4 +36,4 @@ nano /etc/fstab
 
 <!-- Монтируем папку -->
 
-sudo mount /dev/sdb1 /mnt/disk1
+sudo mount /dev/sdb1 /mnt/storage
