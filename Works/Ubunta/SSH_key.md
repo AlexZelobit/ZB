@@ -4,6 +4,7 @@
 
 ssh-keygen
 cp ~/.ssh/id_rsa.pub /tmp/projects/keys/authorized_keys
+ssh-copy-id username@remote_host
 
 <!-- подключаемся к машине -->
 

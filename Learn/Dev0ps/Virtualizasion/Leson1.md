@@ -1,7 +1,7 @@
 # Системы виртуализации 1 типа
 
 VMware ESXI
-KVM
+KVM (Proxmox,Ovirt)
 Hyper-V
 
 **Google trend - куда развиваются технологии**

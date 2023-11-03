@@ -3,6 +3,10 @@
 ntp.msk-ix.ru
 194.190.168.1
 
+# Меняем часовой пояс
+
+cp /usr/share/zoneinfo/Europe/Moscow /etc/localtime
+
 # Установка сервера
 
 <!-- Устанавливаем ntp сервер следующей командой: -->

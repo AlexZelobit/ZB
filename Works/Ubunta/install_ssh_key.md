@@ -23,7 +23,7 @@ ssh-keygen
 <!-- Можем вывести и скопировать или сразу установить на удаленную машину. -->
 
 cat .ssh/id_rsa.pub
-ssh-copy-id 172.21.1.88
+ssh-copy-id 172.21.1.188
 
 <!-- Если ssh-copy-id не работает то можно выполнить команду
 cat ~/.ssh/id_rsa.pub | ssh username@remote_host "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys" -->
@@ -32,7 +32,7 @@ cat ~/.ssh/id_rsa.pub | ssh username@remote_host "mkdir -p ~/.ssh && cat >> ~/.s
 
 <!-- Проверяем права 600 -->
 
-chmod 600 authorized_keys
+chmod 600 .ssh/authorized_keys
 
 <!-- После изменений перезагружаем cлужбу -->
 

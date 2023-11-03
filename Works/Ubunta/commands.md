@@ -255,3 +255,23 @@ hostnamectl
 # Утилита статистики
 
 sudo apt-get glances
+
+# Посмотреть все службы
+
+systemctl list-unit-files --type service
+
+# Поиск службы по имени
+
+systemctl list-unit-files 'mysql\*'
+
+# Перезапуск
+
+sudo systemctl restart nginx
+
+# Меняем цвет и вормат приглашения
+
+export PS1="\e[1;32m\A \u@\h:\w\$ \e[m"
+
+<!-- Нужно создать если нет -->
+
+source /etc/skel/.bashrc

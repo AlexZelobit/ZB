@@ -71,6 +71,7 @@ zbxtg;graphs_height=300
 zbxtg;graphs_period=1800
 zbxtg;itemid:{ITEM.ID1}
 zbxtg;title:{HOST.HOST} - {TRIGGER.NAME}
+{{{TRIGGER.SEVERITY}}} {TRIGGER.NAME}
 {{Information}} {HOSTNAME} ({HOST.IP})
 {{time}} {DATE} {TIME}
 
