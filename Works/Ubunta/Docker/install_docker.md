@@ -33,3 +33,11 @@ sudo usermod -aG docker $USER
 docker run hello-world
 
 <!-- В ответ должно выйти приветственное сообщение об успешном выполнении. -->
+
+<!-- Запуск службы -->
+
+systemctl start docker
+
+<!-- Добавляем себя в пользователи, где не нужно вводить sudo -->
+
+gpasswd -a $USER docker
