@@ -5,7 +5,7 @@
 Windows Server 2019
 Разворачиваем необходимые роли и при активации сервера выбираем Соглашение Enterprise Аgreement, номер соглашения легко найти в интернете.
 
-В ветке HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\RCM\Licensing Core нужно изменить значение параметра DWORD с именем LicensingMode 
+В ветке HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server\RCM\Licensing Core нужно изменить значение параметра DWORD с именем LicensingMode
 
 2 — если используется лицензирование на устройства (Per Device)
 4 — при использовании RDS лицензирования на пользователей (Per User)

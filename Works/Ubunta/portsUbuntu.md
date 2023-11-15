@@ -82,3 +82,32 @@ sudo iptables -t nat -A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80
 <!-- Открыть порт для определенного ip -->
 
 sudo iptables -A INPUT -p tcp -s 95.214.116.10 --dport 22 -j ACCEPT
+
+################# ШАБЛОН СКРИПТА ########################>
+
+sudo iptables -F
+sudo iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+sudo iptables -A INPUT -i lo -j ACCEPT
+sudo iptables -A OUTPUT -o lo -j ACCEPT
+sudo iptables -I INPUT -m state --state INVALID -j DROP
+sudo iptables -A INPUT -p icmp -j ACCEPT
+sudo iptables -A OUTPUT -p icmp -j ACCEPT
+sudo iptables -A INPUT -p tcp -s 95.214.116.10 --dport 22 -j ACCEPT
+sudo iptables -A INPUT -p tcp -s 95.214.116.10 --dport 80 -j ACCEPT
+sudo iptables -A INPUT -p tcp -s 95.214.116.10 --dport 443 -j ACCEPT
+sudo iptables -P FORWARD DROP
+sudo iptables -P INPUT DROP
+sudo apt install iptables-save
+sudo iptables-save
+
+######## СБРОС ВСЕх ПРАВИЛ и ЦЕПОЧЕКъЮ ###############
+sudo iptables -P INPUT ACCEPT
+sudo iptables -P FORWARD ACCEPT
+sudo iptables -P OUTPUT ACCEPT
+
+sudo iptables -t nat -F
+sudo iptables -t mangle -F
+sudo iptables -F
+sudo iptables -X
+
+sudo iptables-save

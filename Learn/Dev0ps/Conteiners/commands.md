@@ -12,3 +12,9 @@
 # Вопросы про Docker
 
 https://habr.com/ru/companies/slurm/articles/528206/
+
+# Перезапуск службы докер
+
+sudo service docker stop
+
+sudo service docker start
