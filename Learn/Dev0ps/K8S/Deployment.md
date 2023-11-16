@@ -1,5 +1,7 @@
 # Deployment - управляет состоянием развертывания подов
 
+<!-- replicaSet создает поды, а deployment создает Repicaset -->
+
 Манифест такой же, как у ReplicaSet. Кроме kind
 
 <!-- ---
@@ -25,7 +27,12 @@ spec:
 
 <!-- Развернем наш deployment -->
 
-kubectl apply deploy my-deployment
+kubectl apply -f my-deployment
+kubectl get deploy
+
+<!-- Удаление наших реплик -->
+
+kubectl delete rs my-replicaset
 
 <!-- Проверим настройки deploy -->
 

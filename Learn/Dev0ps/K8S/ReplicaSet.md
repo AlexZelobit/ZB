@@ -24,3 +24,17 @@ spec:
         name: nginx
         ports:
         - containerPort: 80 -->
+
+<!-- Просмотр наших реплик -->
+
+kubectl get replicaset
+
+<!-- Удаление наших реплик -->
+
+kubectl delete rs my-replicaset
+
+<!-- Удаляя репликасеты мы удаляем поды -->
+
+<!-- Можем контролировать количество реплик указав имя и количество нужное нам -->
+
+kubectl scale rs my-replicaset --replicas=0

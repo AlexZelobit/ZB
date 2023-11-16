@@ -8,3 +8,11 @@ sudo nano /etc/bash.bashrc
 
 export PS1="\e[1;32m\A \u@\h:\w\$ \e[m"
 source ~/.bashrc
+
+# Создание переменной оболочки
+
+set k=kubectl
+
+# Создание переменной окружения
+
+export $k

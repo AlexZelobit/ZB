@@ -135,7 +135,7 @@ WantedBy=multi-user.target
 Теперь нужно сохранить файл и добавить созданную службу в автозагрузку:
 
 sudo systemctl enable myvnc.service
-Для применения настроек остаётся перезапустить демон systemd и VNC-сервер следующими командами:
+Для применения настроек остаётся перезапустить демон systemd и VNC-сервер следующими командами:ecnfyjdrf VNC ubuntuopenvpn
 
 sudo systemctl daemon-reload
 myvnc restart
