@@ -47,3 +47,5 @@ kubectl edit deploy my-deployment
 <!-- Проверка истории -->
 
 kubectl rollout history my-deployment
+
+curl -k 212.233.74.166 -L -H "Host: my-host.local"
