@@ -20,3 +20,8 @@ zabbix_internet_lab_ru_bot
 Перейдите в Bot Settings → Group Privacy.
 Выберите Turn off.
 Должна появиться фраза Privacy mode is disabled for Bot.
+
+# Добавляем в группу бота LeadConverterToolkitBot
+
+узнаем ID группы
+/get_chat_id
