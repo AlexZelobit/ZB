@@ -1,5 +1,7 @@
 # Установка nginx в Linux
 
+## инструкция https://firstvds.ru/technology/ustanovka-i-nastroyka-nginx
+
 <!-- Если nginx ещё не установлен в вашей системе, сделать это очень просто: -->
 
 sudo apt update && sudo apt install nginx
@@ -140,7 +142,3 @@ sudo systemctl restart php-fpm
 <!-- А если нет, лучше заглянуть в журнал /var/log/nginx/error.log. Кроме того, вы всегда можете проверить прослушиваемые порты командой: -->
 
 netstat -lntp
-
-# полная инструкция
-
-https://firstvds.ru/technology/ustanovka-i-nastroyka-nginx
